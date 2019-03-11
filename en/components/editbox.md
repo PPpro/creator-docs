@@ -8,24 +8,27 @@ Click **Add Component** button at the bottom of **Properties** panel and then se
 
 For EditBox API reference, please refer to [EditBox API](../../../api/en/classes/EditBox.html).
 
+## Upgrade for EditBox component
+
+In v2.1, we've made some adjustment and optimization on EditBox component. The change mainly includes:
+- Deprecated `fontSize`, `fontColor`, `lineHeight`,  `placeholderFontSize`, `placeholderFontColor`, `backgroundImage`, `stayOnTop` properties
+- Add `textLabel`,  `placeholderLabel`, `background` properties, users can adjust style sheet of EditBox more flexibly by mounting customized `CCLabel` or `CCSprite` components on `CCEditBox` components
+- Deprecated `setFocus()` method, add new methods `focus()` and `blur()`, which provides users with the ability to force ending editing editBox.
+
 ## Layout property
 
-| Property |   Function Explanation
-| -------------- | ----------- |
-| String                 | The initial input text of EditBox.
-| Background Image       | The background image of EditBox.
-| Keyboard Return Type   | The keyboard return type of EditBox. This is useful for keyboard of mobile device.
-| Input Flag             | Specify the input flag: password or capitalize word. (Only supports Android platform)
-| Input Mode             | Specify the input mode: multiline or single line.
-| Font Size              | The font size of input label.
-| StayOnTop              | The input is always visible and be on top of the game view.
-| TabIndex               | Set the tabIndex of the DOM input element, only useful on Web.
-| Line Height            | The line height of input label.
-| Font Color             | The font color of input label.
-| Placeholder            | The content string of placeholder.
-| Placeholder Font Size  | The font size of placeholder label.
-| Placeholder Font Color | The font color of placeholder label.
-| Max Length             | The maximize input characters.
+| Property              |   Function Explanation
+| --------------        | ----------- |
+| String                | The initial input text of EditBox.
+| Placeholder           | The content string of placeholder.
+| Background            | The background sprite of EditBox.
+| TextLabel             | The text label of EditBox.
+| PlaceholderLabel      | The placeholder label of EditBox.
+| Keyboard Return Type  | The keyboard return type of EditBox. This is useful for keyboard of mobile device.
+| Input Flag            | Specify the input flag: password or capitalize word. (Only supports Android platform)
+| Input Mode            | Specify the input mode: multiline or single line.
+| TabIndex              | Set the tabIndex of the DOM input element, only useful on Web.
+| Max Length            | The maximize input characters.
 
 ## EditBox Event
 
