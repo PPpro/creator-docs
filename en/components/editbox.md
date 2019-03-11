@@ -42,6 +42,9 @@ In v2.1, we've made some adjustment and optimization on EditBox component. The c
 |Component| Script component name.
 |Handler| Assign a callback function which will be triggered before user starting to input text.
 
+Description: This event would be fired when users touch the EditBox.
+
+
 ### Text Changed Event
 
 | Property |   Function Explanation
@@ -49,6 +52,8 @@ In v2.1, we've made some adjustment and optimization on EditBox component. The c
 |Target| Node with the script component.
 |Component| Script component name.
 |Handler| Assign a callback function which will be triggered when user is editing text.
+
+Description: This event would be fired every time the content in EditBox is changed.
 
 ### Editing Did Ended Event
 
@@ -58,6 +63,10 @@ In v2.1, we've made some adjustment and optimization on EditBox component. The c
 |Component| Script component name.
 |Handler| Assign a callback function which will be triggered after user finished input text. Usually when in single line input mode, it's triggered after user press return key or click the area outside of EditBox. When in multiline input mode, it's triggered only after user click the area outside of EditBox.
 
+Description: Bluring editBox may fired this event.  
+In single line mode, event would be fired if users press Return which may end editbox editing.  
+In multiline mode, event would be fired if users press Done on soft keyboard on mobile.
+
 ## Detailed explanation
 
 - Keyboard Return Type is mainly designed for mobile device input. You could use this option to customize return key style of virtual keyboard.
@@ -65,7 +74,8 @@ In v2.1, we've made some adjustment and optimization on EditBox component. The c
 - If you want to enable multiline input support, the flag of `Input Mode` should be set to `Any`.
 - The background image of EditBox support slice 9, you could customize the border as you did in Sprite component.
 
-**Note**: When used in **iframe**, you should set `stayOnTop` property to true.
+Description: Pressing Return or pressing Done on mobile may fire this event.  
+In single line mode, editBox may lose its focus if users press Return.
 
 ## Add a callback through the script code
 
