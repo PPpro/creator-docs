@@ -243,22 +243,23 @@ Creator 中默认所有 assets 目录下的脚本都会进行编译，自动为�
     npm install -g typescript
     ```
 
-2. 用 VS Code 打开项目根目录, 打开根目录下的 `tsconfig.json` 文件，在 `compilerOptions` 字段中设置 `outDir`：
+2. 用 VS Code 打开项目根目录中的 `tsconfig.json` 文件，然后在 `compilerOptions` 字段中设置 `outDir`：
 
     ```json
     {
       "compilerOptions": {
-    
+
         "outDir": "temp/vscode-dist"
 
         ......
-      }
+      },
 
+      ......
     }
     ```
 
 
-3. 我们需要在 `assets` 文件夹之外编写带 `namespace` 的 ts 脚本， 假设我们在项目根目录下新建一个文件夹 `namespaceWorkspace` 用来存放这类脚本，在该文件夹下创建一个脚本 `foo.ts`, 编写代码如下：
+3. 在项目的根目录下（assets 目录外），新建一个文件夹 `namespaces` 用于存放我们所有包含命名空间的 ts 脚本。然后在该文件夹下新建一个脚本 foo.ts，代码如下：
 
     ```ts
     namespace Foo {
@@ -268,8 +269,11 @@ Creator 中默认所有 assets 目录下的脚本都会进行编译，自动为�
 
 4. 在 VS Code 中按下 **Ctrl/Cmd + Shift + P**，在弹出的 Command Palette 中输入 `task`，并选择 `Tasks: Configure Task`。然后继续在弹出的选项中选择 `tsc: build - tsconfig.json`。
 
-5. 按下 **Ctrl/Cmd + Shift + B**，在 Command Palette 中选择 `tsc: build - tsconfig.json` 启动 ts 编译任务。可以看到在 **temp** 目录下生成了 **vscode-dist** 文件夹。打开 **temp/vscode-dist/namespaceWorkspace/foo.js** 文件，此时文件内的内容应该是：
+5. 按下 **Ctrl/Cmd + Shift + B**，在 Command Palette 中选择 `tsc: build - tsconfig.json` 启动 ts 编译任务。可以看到在 **temp** 目录下生成了 **vscode-dist** 文件夹。
+    - 如果项目中只有一个 ts 文件，则会将 **foo.ts** 文件编译输出到 **temp/vscode-dist/foo.js**
+    - 如果项目中有多个 ts 文件，则会将 **foo.ts** 文件编译输出到 **temp/vscode-dist/namespaces/foo.js**  
 
+    此时 **foo.js** 文件内的内容应该是：
     ```js
     var Foo;
     (function (Foo) {
