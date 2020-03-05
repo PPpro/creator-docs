@@ -273,7 +273,7 @@ Creator 中默认所有 assets 目录下的脚本都会进行编译，自动为�
     - 如果项目中只有一个 ts 文件，则会将 **foo.ts** 文件编译输出到 **temp/vscode-dist/foo.js**
     - 如果项目中有多个 ts 文件，则会将 **foo.ts** 文件编译输出到 **temp/vscode-dist/namespaces/foo.js**  
 
-    此时 **foo.js** 文件内的内容应该是：
+    此时 **foo.js** 文件的内容应该是：
     ```js
     var Foo;
     (function (Foo) {
