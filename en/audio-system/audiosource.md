@@ -4,15 +4,12 @@
 
 ## Properties
 
-|Property          | Description                                                    |
-
+|Property          | Description                                                               |
 |:--                 | :--                                                                     |
-|Clip                | The audio resource object to be played                                           |
-
-|Loop                | Whether to loop                                                      |
-
-|PlayOnAwake         | Whether to play audio automatically after the component is activated    |
-|Volume              | Audio volume, ranging from 0 to 1                                  |
+|__Clip__            | The audio resource object to be played                                  |
+| __Loop__           | Whether to loop                                                         |
+|__PlayOnAwake__     | Whether to play audio automatically after the component is activated    |
+|__Volume__          | Audio volume, ranging from 0 to 1                                       |
 
 
 For more script interfaces for AudioSource, please refer to [AudioSource API](../../../api/en/classes/component_audio.audiosource.html).  
